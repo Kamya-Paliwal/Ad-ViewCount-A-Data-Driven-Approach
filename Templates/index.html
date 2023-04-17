@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>AD-VIEWS ESTIMATOR</title>
+    </head>
+    
+<style>
+    
+   html {
+  height: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  font-size: 36px;
+  color: #FF6347;
+  background-color: #FFFFFF;
+  display: inline-block;
+  border: 2px solid #FF6347;
+  border-radius: 5px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -20px;
+  height: 36px;
+  width: 36px;
+  background-color: #FF6347;
+  border-radius: 5px 0 0 5px;
+}
+
+.header span {
+  position: relative;
+  z-index: 1;
+}
+body {
+  height: 500px;
+  background-color: #222;
+  color: #EEE;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+form {
+  background-color: #F8F8FF;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  margin: 0 auto;
+  padding: 20px;
+  width: 50%; /* Half of the original size */
+  height: 400px;
+  overflow: auto;
+}
+
+#form-text {
+  display: inline-block;
+  width: 40%;
+  height: 400px;
+  text-align: left;
+  float: left;
+  font-size: 24px;
+  color: #FF6347;
+  padding-top: 80px;
+  padding-left: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #555;
+}
+
+input[type="number"],
+select {
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #FF6347;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+  padding: 15px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #FF4500;
+}
+
+h3 {
+  background-color: #FF6347;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  font-size: 24px;
+  margin-top: 50px;
+  padding: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+</style>
+
+       
+</style>
+
+<body>
+
+<!-- Add header -->
+  <div class="header">
+  <span>OmniCom</span>
+</div>
+  <!-- ... -->
+
+<div id="form-text">
+  <h1>View-Count Visionary</h1>
+  <p>Enter the details of your video below and we will predict the number of views it will receive!</p>
+</div>
+
+<div>
+ 
+ <form action="{{ url_for('predict')}}" method="post" style="background-color:#E6E6FA">
+
+<label>Number of views in video:</label>
+  <input type="number" name="views" required><br><br>
+  <label>Number of likes in video:</label>
+  <input type="number" name="likes" required><br><br>
+  <label>Number of dislikes in video:</label>
+  <input type="number" name="dislikes" required><br><br>
+  <label>Number of comments in video:</label>
+  <input type="number" name="comments" required><br><br>
+  <label>Year of publish:</label>
+  <input type="number" name="year" required><br><br>
+  <label>Duration of video (in seconds):</label>
+  <input type="number" name="duration" required><br><br>
+  <label>Category of the video:</label>
+  <select name="category" required>
+    <option value="1">Video tutorials</option>
+    <option value="2">Educational videos</option>
+    <option value="3">Product reviews</option>
+    <option value="4">Challenge Videos</option>
+    <option value="5">Product Launch Videos</option>
+    <option value="6">Short Videos</option>
+    <option value="7">Vlogs</option>
+    <option value="8">Video Testimonials</option>
+  </select><br><br>
+         
+<input type="submit" value="Predict">
+</form>
+</div>
+    
+
+<h3>Contact us: 9873593560        Email: omnicom@gmail.com </h3>
+
+</body>
+
